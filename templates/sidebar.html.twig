@@ -1,0 +1,35 @@
+{% set array = app.request.get('_route')|split('_') %}
+<nav class="navbar navbar-expand d-flex flex-column align-item-start"
+  id="sidebar">
+  <a href="#" class="navbar-brand text-light mb-4">
+    <div class="display-5 font-weight-bold">
+      TMA
+    </div>
+  </a>
+  <ul class="navbar-nav d-flex flex-column w-100">
+ 	
+    {% if app.user.roles is defined %}
+      {% for role in app.user.roles %}
+        {% if role == 'ROLE_ADMIN' %}
+          <li class="nav-item w-100">
+            <a class="nav-link text-light pl-4 {{ array[1] =='equipment' ? 'nav-item-active' : '' }} " href="/equipments">
+              Equipments
+            </a>
+          </li>
+          <li class="nav-item w-100">
+            <a class="nav-link text-light pl-4 {{ array[1] =='category' ? 'nav-item-active' : '' }}" href="/category">Categories</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <li class="nav-item w-100">
+      <a class="nav-link text-light pl-4" href="/user/equipment">My Equipments</a>
+    </li>
+    <li class="nav-item w-100">
+      <a class="nav-link text-light pl-4" href="/user" class="">My info</a>
+    </li>
+    <li class="nav-item w-100">
+      <a class="nav-link text-light pl-4" href="/logout" class="">Logout</a>
+    </li>
+  </ul>
+</nav>

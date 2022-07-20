@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Equipment{% endblock %}
+
+{% block body %}
+<div class="w-4/5 m-auto pt-40">
+    <h1 class="text-6xl text-center pb-12">
+        Create equipment
+    </h1>
+
+    <h1>Create new Equipment</h1>
+
+    {{ include('equipment/_form.html.twig') }}
+
+    <a href="{{ path('app_equipment_index') }}">back to list</a>
+</div>
+{% endblock %}

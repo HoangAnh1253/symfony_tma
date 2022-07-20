@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Equipment
+{% endblock %}
+
+{% block body %}
+  <section class="p-4 my-container">
+    <h1>
+      My Equipments
+    </h1>
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">
+            ID
+          </th>
+          <th scope="col">
+            Name
+          </th>
+          <th scope="col">
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody id="equipment-table-body">
+        {% for equipment in equipments %}
+          <tr id="{{ equipment.id }}" class="table-row">
+            <th scope="row">
+              {{ equipment.id }}
+            </th>
+            <td class="equipName">
+              {{ equipment.name }}
+            </td>
+            <td class="equipDesc">
+              {{ equipment.desc }}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+{% endblock %}

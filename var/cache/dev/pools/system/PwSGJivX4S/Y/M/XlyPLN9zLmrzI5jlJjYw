@@ -1,0 +1,13 @@
+<?php //App%255CEntity%255CEquipment
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Gedmo\\Mapping\\Annotation\\SoftDeleteable'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Gedmo\\Mapping\\Annotation\\SoftDeleteable')),
+    ],
+    null,
+    [],
+    [
+        $o[0],
+    ],
+    []
+); }];
